@@ -1,0 +1,41 @@
+{
+  "name": "redis-scanstreams",
+  "version": "0.0.0",
+  "description": "A streaming interface to the Redis SCAN (SCAN, SSCAN, HSCAN, ZSCAN) commands in Redis 2.8.x+",
+  "main": "scan_streams.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/"
+  },
+  "keywords": [
+    "redis",
+    "streams",
+    "keys",
+    "scan",
+    "zscan",
+    "sscan",
+    "hscan"
+  ],
+  "author": "Bryce B. Baril",
+  "license": "MIT",
+  "devDependencies": {
+    "redis": "~0.9.2",
+    "terminus": "~1.0.4",
+    "tape": "~2.3.0"
+  },
+  "dependencies": {
+    "xtend": "~2.1.1",
+    "stream-spigot": "~3.0.1",
+    "through2": "~0.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:brycebaril/redis-scanstreams.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brycebaril/redis-scanstreams/issues"
+  },
+  "homepage": "https://github.com/brycebaril/redis-scanstreams"
+}
