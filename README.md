@@ -22,7 +22,7 @@ var client = redis.createClient()
 var tail = require("terminus").tail
 
 client.scan()
-  .pipe(tail({objectMode: true}, console.log)
+  .pipe(tail({objectMode: true}, console.log))
 ```
 
 API
