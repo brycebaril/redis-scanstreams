@@ -21,14 +21,14 @@
   "author": "Bryce B. Baril",
   "license": "MIT",
   "devDependencies": {
-    "redis": "~0.9.2",
-    "terminus": "~1.0.4",
-    "tape": "~2.3.0"
+    "redis": "~0.10.0",
+    "terminus": "~1.0.8",
+    "tape": "~2.3.2"
   },
   "dependencies": {
-    "xtend": "~2.1.1",
-    "stream-spigot": "~3.0.1",
-    "through2": "~0.2.3"
+    "xtend": "~2.1.2",
+    "stream-spigot": "~3.0.3",
+    "through2": "~0.4.0"
   },
   "repository": {
     "type": "git",
