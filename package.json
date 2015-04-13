@@ -1,6 +1,6 @@
 {
   "name": "redis-scanstreams",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A streaming interface to the Redis SCAN (SCAN, SSCAN, HSCAN, ZSCAN) commands in Redis 2.8.x+",
   "main": "scan_streams.js",
   "directories": {
