@@ -6,11 +6,13 @@ redis-scanstreams
 [![david-dm](https://david-dm.org/brycebaril/redis-scanstreams.png)](https://david-dm.org/brycebaril/redis-scanstreams/)
 [![david-dm](https://david-dm.org/brycebaril/redis-scanstreams/dev-status.png)](https://david-dm.org/brycebaril/redis-scanstreams#info=devDependencies/)
 
-Provides a streaming interface to the Redis *SCAN commands.
+Provides a streaming interface to the Redis \*SCAN commands.
 
 Replaces the SCAN, SSCAN, HSCAN, and ZSCAN methods on the [node_redis](http://npm.im/redis) client with streaming versions.
 
-You can read more about SCAN [here](http://redis.io/commands/scan)
+You can read more about SCAN [here](http://redis.io/commands/scan).
+
+## Example: Use with [terminus](https://github.com/brycebaril/node-terminus)
 
 ```javascript
 var redis = require("redis")
@@ -25,18 +27,37 @@ client.scan()
   .pipe(tail({objectMode: true}, console.log))
 ```
 
+## Example: Use with [stream-to-array](https://github.com/stream-utils/stream-to-array)
+You can use `stream-to-array` to concatenate the Redis scan results into a single array.
+```javascript
+var redis = require("redis")
+
+// replace the methods for any clients
+require("redis-scanstreams")(redis)
+
+var client = redis.createClient()
+var toArray = require('stream-to-array')
+
+toArray(client.scan(), function(err, arr) {
+  if (err)
+    throw err;
+
+  console.log(arr)
+})
+```
+
 API
 ===
 
 `scanStreams(redis_library)`
 ---
 
-Replaces the *SCAN methods in the provided library. Assumes `node_redis` or a library that similarly exposes the `RedisClient` type which has the *SCAN methods.
+Replaces the \*SCAN methods in the provided library. Assumes `node_redis` or a library that similarly exposes the `RedisClient` type which has the \*SCAN methods.
 
 `client.scan(options)`
 ---
 
-Calls the `scan` command, walking the cursor through the entire keyspace. Returns a `stream.Readable` containing the redis keyspace.
+Calls the `scan` command, walking the cursor through the entire keyspace. Returns a `stream.Readable` containing the Redis keyspace.
 
 Options:
   * `pattern`: the pattern to match keys against
